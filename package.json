@@ -4,7 +4,7 @@
   "description": "An example of three important type of testing",
   "main": "server.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "author": "Sara Gholizadeh",
   "license": "ISC",
