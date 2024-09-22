@@ -2,9 +2,10 @@
   "name": "testexpress",
   "version": "1.0.0",
   "description": "An example of three important type of testing",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "start": "nodemon src/server.js"
   },
   "author": "Sara Gholizadeh",
   "license": "ISC",

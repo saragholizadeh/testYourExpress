@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../../server'); // Import the Express app
+const app = require('../../src/server'); // Import the Express app
 
 describe('GET /api/users', () => {
   it('should return a list of users', async () => {

@@ -1,6 +1,5 @@
 const request = require('supertest');
-const app = require('../../server'); // Import the actual app
-
+const app = require('../../src/server');
 describe('E2E: Users API', () => {
   it('should fetch users list', async () => {
     const response = await request(app).get('/api/users');
