@@ -14,6 +14,6 @@ mongoose
   .catch((err) => console.log(err));
 
 // Routes
-app.use("/tasks", itemRoutes);
+app.use("/api/tasks", itemRoutes);
 
 module.exports = app;

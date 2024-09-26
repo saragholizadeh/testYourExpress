@@ -23,9 +23,9 @@ exports.create = async (req, res) => {
   try {
     const task = new Task(req.body);
     await task.save();
-    res.status(201).json({ task });
+    res.status(201).json(task);
   } catch (e) {
-    res.status(400).json({ message: e.message });
+    res.status(400).json({ message: e });
   }
 };
 
