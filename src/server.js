@@ -1,15 +1,13 @@
 const express = require("express");
 const app = express();
+require("dotenv").config();
+const taskRoutes = require('./routes/task.route');// Sample route
+app.use('/task', taskRoutes)
 
-// Sample route
-app.get('/api/users', (req, res) => {
-    res.json([{ name: 'Sara' }, { name: 'John' }]);
+module.exports = app; // Export app for testing
+
+if (require.main === module) {
+  app.listen(process.env.PORT, () => {
+    console.log(`Server is running on port ${process.env.PORT}`);
   });
-
-  module.exports = app; // Export app for testing
-
-  if (require.main === module) {
-    app.listen(5000, () => {
-      console.log('Server is running on port 5000');
-    });
-  }
+}
