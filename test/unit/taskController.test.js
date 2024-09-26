@@ -19,4 +19,22 @@ describe('Task Controller - Unit Tests', () => {
     expect(res.status).toHaveBeenCalledWith(200);
     expect(res.json).toHaveBeenCalledWith(tasks);
   });
+
+  it('should create a new task', async () => {
+    const mockSavedTask = {
+      _id: 'mockedTaskId',
+      title: 'Test Task',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    };
+
+    Task.mockImplementation(() => ({
+      save: jest.fn().mockResolvedValue(mockSavedTask),
+    }));
+
+    await create(req, res);
+
+    expect(res.status).toHaveBeenCalledWith(201);
+    expect(res.json).toHaveBeenCalledWith(mockSavedTask);
+  });
 });
