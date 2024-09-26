@@ -1,17 +1,8 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const app = express();
-require("dotenv").config();
-const taskRoutes = require("./routes/task.route");
+// src/server.js
+const app = require("./app");
 
-// Routes
-app.use("/task", taskRoutes); 
+const PORT = process.env.PORT || 3000;
 
-// Export app for test module
-module.exports = app;
-
-if (require.main === module) {
-  app.listen(process.env.PORT, () => {
-    console.log(`Server is running on port ${process.env.PORT}`);
-  });
-}
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
