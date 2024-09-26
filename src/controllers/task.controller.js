@@ -33,7 +33,7 @@ exports.remove = async (req, res) => {
   try {
     const task = await Task.findByIdAndDelete(req.params.id);
     if (!task) return res.status(404).json({ message: "task not found" });
-    res.status(200).json({ message: "Task deleted successfully" });
+    res.status(204).json({ message: "Task deleted successfully" });
   } catch (e) {
     res.status(400).json({ message: e.message });
   }
